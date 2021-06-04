@@ -5,7 +5,6 @@ const car = require('../models/car_model');
 router.get('/:id?',
  function(request, response) {
   if (request.params.id) {
-    const car_id = parseInt(request.params.id)
     car.getById(id, function(err, dbResult) {
       if (err) {
         response.json(err);
