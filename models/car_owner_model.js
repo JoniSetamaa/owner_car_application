@@ -5,7 +5,7 @@ const car_owner = {
     return db.query('select * from car as c inner join car_owner as co on c.car_id = co.car_id inner join owner as o on o.owner_id = co.owner_id where co.owner_id = $1', [id], callback);
   },
   getAll: function(callback) {
-    return db.query('select * from car_owner', callback);
+    return db.query('select * from car as c inner join car_owner as co on c.car_id = co.car_id inner join owner as o on o.owner_id = co.owner_id', callback);
   },
   add: function(car_owner, callback) {
     return db.query(
