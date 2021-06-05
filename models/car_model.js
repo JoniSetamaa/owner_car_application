@@ -19,7 +19,7 @@ const car = {
   },
   update: function(id, car, callback) {
     return db.query(
-      'update car set brand = $1, model = $2, year_year_of_manufacture = $3 where car_id = $4',
+      'update car set brand = $1, model = $2, year_of_manufacture = $3 where car_id = $4',
       [car.brand, car.model, car.year_of_manufacture, id],
       callback
     );
