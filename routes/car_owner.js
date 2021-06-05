@@ -38,7 +38,7 @@ function(request, response) {
 
 router.delete('/:id', 
 function(request, response) {
-  car_owner.delete(request.params.id, function(err, dbResult) {
+  car_owner.delete(request.params.id, request.body, function(err, dbResult) {
     if (err) {
       response.json(err);
     } else {
